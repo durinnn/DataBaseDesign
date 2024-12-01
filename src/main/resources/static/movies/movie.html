@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management</title>
+    <link rel="stylesheet" href="../css/homestyle.css">
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <h1>Movie Management</h1>
+        <div class="actions">
+            <button onclick="openPopup('add-movie-popup')">영화 추가</button>
+            <button onclick="openPopup('delete-movie-popup')">영화 삭제</button>
+            <button onclick="window.location.href='../home.html'">홈으로</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="movie-list">
+        <h2>Movie List</h2>
+        <div class="search-filters">
+            <input type="text" id="search-box" placeholder="Search by Title" oninput="filterMovies()">
+            <button id="load-top-rated-btn">Top Rated</button>
+            <button id="load-by-genre-btn">Filter by Genre</button>
+            <select id="genre-filter">
+                <option value="All">All</option>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Horror">Horror</option>
+
+            </select>
+
+
+            <ul id="movies">
+            <!-- 서버에서 가져온 데이터가 여기에 렌더링됩니다 -->
+        </ul>
+    </section>
+</main>
+
+
+
+
+<!-- 팝업: 영화 추가 -->
+<div id="add-movie-popup" class="popup">
+    <div class="popup-content">
+        <h3>영화 추가</h3>
+        <label for="title">제목:</label>
+        <input type="text" id="title" required>
+
+        <label for="genre">장르:</label>
+        <select id="genre">
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Horror">Horror</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Family">Family</option>
+
+        </select>
+
+        <label for="release-date">출시일:</label>
+        <input type="date" id="release-date" required>
+
+        <button onclick="addMovie()">추가</button>
+        <button onclick="closePopup('add-movie-popup')">닫기</button>
+    </div>
+</div>
+
+
+<!-- 팝업: 영화 삭제 -->
+<div id="delete-movie-popup" class="popup">
+    <div class="popup-content">
+        <h3>영화 삭제</h3>
+        <label for="movie-title-delete">영화 제목:</label>
+        <input type="text" id="movie-title-delete" required>
+        <label for="movie-release-date-delete">출시일:</label>
+        <input type="date" id="movie-release-date-delete" required>
+        <button onclick="deleteMovie()">삭제</button>
+        <button onclick="closePopup('delete-movie-popup')">닫기</button>
+    </div>
+</div>
+
+
+<div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
+
+<script src="/js/movies.js"></script>
+</body>
+</html>

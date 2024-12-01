@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="../css/homestyle.css">
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <h1>My Page</h1>
+        <div class="actions">
+            <a href="../home.html"><button>Home</button></a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="user-info">
+        <h2>Welcome <span id="username"></span>!</h2>
+        <div id="user-details">
+            <!-- User details will be populated dynamically -->
+        </div>
+    </section>
+
+    <section class="actions">
+        <h2>Manage Account</h2>
+
+        <div class="action-buttons">
+            <button onclick="getUser()">회원 정보</button>
+            <button onclick="deleteUser()">회원 탈퇴</button>
+        </div>
+    </section>
+
+    <section id="output-section">
+        <h2>Output</h2>
+        <pre id="output">No actions yet.</pre>
+    </section>
+</main>
+
+<script src="../js/users.js"></script>
+</body>
+</html>

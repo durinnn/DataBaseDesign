@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Management</title>
+    <link rel="stylesheet" href="../css/homestyle.css"> <!-- 기존 스타일 파일 연결 -->
+    <script src="../js/reviews.js" defer></script> <!-- 리뷰 관련 JS 연결 -->
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <h1>Review Management</h1>
+        <div class="actions">
+            <button onclick="window.location.href='../home.html'">Home</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="review-list-section">
+        <h2>My Reviews</h2>
+        <p id="user-info">Fetching reviews for user ID: <span id="user-id"></span></p>
+        <ul id="review-list">
+            <!-- 서버에서 가져온 리뷰 데이터가 여기 렌더링됩니다 -->
+        </ul>
+    </section>
+</main>
+</body>
+</html>

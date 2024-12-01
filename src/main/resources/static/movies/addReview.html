@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Review</title>
+  <link rel="stylesheet" href="../css/homestyle.css">
+</head>
+<body>
+<header>
+  <div class="top-bar">
+    <h1>Movie Management</h1>
+    <div class="actions">
+      <button onclick="window.location.href='../movies/movie.html'">영화 목록</button>
+      <button onclick="window.location.href='../home.html'">홈으로</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>Review & Rating</h1>
+
+  <button onclick="openPopup()">리뷰, 평점 추가</button><br><br>
+  <section id="rating-display"></section><br>
+  <section id="movie-info"></section><br>
+  <section id="reviewList">
+  </section>
+
+
+  <div id="review-popup" class="popup" style="display: none;">
+    <form id="review-form" class="popup-content">
+      <label for="review-content">Review:</label>
+      <textarea id="review-content" required></textarea>
+      <br>
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" name="rating" min="1" max="10" step="0.5" required>
+      <br>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="closePopup()">닫기</button>
+    </form>
+  </div>
+
+</main>
+
+
+<script src="../js/addReview.js"></script>
+</body>
+</html>
